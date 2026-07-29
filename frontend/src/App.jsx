@@ -20,51 +20,14 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
-        }
-      />
+      {/* Public Routes (No Login Required to Browse) */}
+      <Route path="/" element={<Home />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/wishlist" element={<Wishlist />} />
+      <Route path="/product/:asin" element={<ProductDetails />} />
+      <Route path="/cart" element={<Cart />} />
 
-      <Route
-        path="/dashboard"
-        element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        }
-      />
-
-      <Route
-        path="/wishlist"
-        element={
-          <ProtectedRoute>
-            <Wishlist />
-          </ProtectedRoute>
-        }
-      />
-
-      <Route
-        path="/product/:asin"
-        element={
-          <ProtectedRoute>
-            <ProductDetails />
-          </ProtectedRoute>
-        }
-      />
-
-      <Route
-        path="/cart"
-        element={
-          <ProtectedRoute>
-            <Cart />
-          </ProtectedRoute>
-        }
-      />
-
+      {/* Protected Routes (Login Required to Place Order / View Orders) */}
       <Route
         path="/checkout"
         element={
