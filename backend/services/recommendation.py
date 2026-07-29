@@ -36,9 +36,12 @@ products["combined_text"] = (
     products["description"].fillna("")
 )
 
-tfidf = TfidfVectorizer(stop_words="english", max_features=5000)
+tfidf = TfidfVectorizer(
+    stop_words="english",
+    max_features=5000
+)
+
 tfidf_matrix = tfidf.fit_transform(products["combined_text"])
-cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 
 # =====================================================
 # Image Helper
@@ -268,28 +271,48 @@ def get_product_details(asin):
 
 def recommend(asin, top_n=8):
     asin = str(asin).strip()
+
     match = products[products["asin"] == asin]
-    
+
     if match.empty:
-        return [serialize_product(row) for _, row in products.head(top_n).iterrows()]
+        return [
+            serialize_product(row)
+            for _, row in products.head(top_n).iterrows()
+        ]
 
     idx = match.index[0]
-    if idx >= cosine_sim.shape[0]:
-        return [serialize_product(row) for _, row in products.head(top_n).iterrows()]
 
-    similarity_scores = list(enumerate(cosine_sim[idx]))
-    similarity_scores = sorted(similarity_scores, key=lambda x: x[1], reverse=True)
+    # Compute similarity only for the requested product
+    similarity_scores = linear_kernel(
+        tfidf_matrix[idx:idx + 1],
+        tfidf_matrix
+    ).flatten()
+
+    similar_indices = similarity_scores.argsort()[::-1]
 
     recommendations = []
-    for product_index, score in similarity_scores[1:]:
+
+    for product_index in similar_indices:
+
+        if product_index == idx:
+            continue
+
+        row = products.iloc[product_index]
+
+        recommendations.append(
+            serialize_product(
+                row,
+                similarity=float(similarity_scores[product_index])
+            )
+        )
+
         if len(recommendations) >= top_n:
             break
-        if product_index >= len(products):
-            continue
-        row = products.iloc[product_index]
-        recommendations.append(serialize_product(row, similarity=score))
 
     if not recommendations:
-        recommendations = [serialize_product(row) for _, row in products.head(top_n).iterrows()]
+        recommendations = [
+            serialize_product(row)
+            for _, row in products.head(top_n).iterrows()
+        ]
 
     return recommendations
