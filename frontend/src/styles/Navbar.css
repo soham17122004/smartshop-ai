@@ -1,0 +1,281 @@
+/* ===================================================
+   NAVBAR (PREMIUM LIGHT GLASSMORPHIC)
+=================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 14px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo:hover .logo-icon {
+  transform: rotate(12deg) scale(1.08);
+  box-shadow: 0 10px 25px rgba(236, 72, 153, 0.45);
+}
+
+.logo-text h2 {
+  margin: 0;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.logo-text span {
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+/* ===========================
+   MENU BUTTON
+=========================== */
+
+.menu-btn {
+  display: none;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  font-size: 20px;
+  padding: 9px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu-btn:hover {
+  background: #e2e8f0;
+  color: #6366f1;
+}
+
+/* ===========================
+   NAV LINKS
+=========================== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #334155;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(99, 102, 241, 0.08);
+  color: #6366f1;
+  transform: translateY(-1px);
+}
+
+.nav-links a.active {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.35);
+}
+
+.nav-links svg {
+  font-size: 16px;
+}
+
+/* Currency Switcher Dropdown */
+.currency-selector-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 4px 10px;
+  transition: all 0.25s ease;
+}
+
+.currency-globe-icon {
+  color: #6366f1;
+  font-size: 14px;
+}
+
+.currency-select {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  cursor: pointer;
+  padding: 4px 2px !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #6366f1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: #6366f1;
+  color: #ffffff;
+  transform: rotate(20deg) scale(1.08);
+}
+
+/* ===========================
+   ICON + BADGE
+=========================== */
+
+.nav-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  font-size: 11px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(255, 65, 108, 0.5);
+  border: 2px solid #ffffff;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* ===========================
+   USER & LOGOUT
+=========================== */
+
+.user-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 16px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #e11d48;
+  padding: 9px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.25s ease;
+}
+
+.logout-btn:hover {
+  background: #e11d48;
+  color: white;
+  box-shadow: 0 4px 15px rgba(225, 29, 72, 0.35);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .menu-btn { display: block; }
+  .navbar-container { padding: 12px 20px; }
+  .nav-links {
+    position: absolute;
+    top: 73px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid #e2e8f0;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+  .nav-links.active { max-height: 500px; padding: 20px; }
+  .nav-links li { width: 100%; }
+  .nav-links a, .logout-btn, .theme-toggle-btn, .currency-selector-box { width: 100%; justify-content: center; padding: 14px; }
+  .theme-toggle-btn, .currency-selector-box { border-radius: 12px; }
+}

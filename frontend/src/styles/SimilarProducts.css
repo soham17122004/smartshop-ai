@@ -1,0 +1,98 @@
+/* ===========================
+   Similar Products Section
+=========================== */
+
+.similar-section {
+    max-width: 1400px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.similar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.similar-header h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #222;
+}
+
+.similar-header p {
+    color: #666;
+    font-size: 17px;
+}
+
+/* ===========================
+   Grid
+=========================== */
+
+.similar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ===========================
+   Loading
+=========================== */
+
+.similar-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #666;
+}
+
+/* ===========================
+   Empty State
+=========================== */
+
+.similar-empty {
+    background: white;
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+    color: #777;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+
+    .similar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .similar-header h2 {
+        font-size: 28px;
+    }
+
+    .similar-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .similar-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

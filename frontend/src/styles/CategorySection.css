@@ -1,0 +1,121 @@
+/* ===================================================
+   PREMIUM LIGHT CATEGORY SECTION
+=================================================== */
+
+.category-section {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #6366f1;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.category-header h2 {
+  font-size: 36px;
+  color: #0f172a;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.category-header p {
+  color: #475569;
+  font-size: 16px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.category-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 20px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12), 0 0 25px rgba(99, 102, 241, 0.15);
+}
+
+.category-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #ffffff !important;
+  margin-bottom: 18px;
+  transition: all 0.35s ease;
+}
+
+.category-icon svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  font-size: 32px;
+}
+
+.category-card:hover .category-icon {
+  transform: rotate(8deg) scale(1.12);
+}
+
+.category-card h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.category-explore-link {
+  color: #6366f1;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.category-card:hover .category-explore-link {
+  color: #4f46e5;
+  transform: translateX(4px);
+}
+
+@media (max-width: 1100px) {
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .category-header h2 { font-size: 28px; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}

@@ -1,0 +1,55 @@
+/* ===================================================
+   HOME PAGE STYLES & ACTIVE FILTER BAR
+=================================================== */
+
+.cursor-spotlight {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: width 0.3s, height 0.3s;
+}
+
+.home-container {
+  position: relative;
+  z-index: 2;
+}
+
+.active-filter-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 10px 22px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #0f172a;
+}
+
+.active-filter-bar strong {
+  color: #6366f1;
+}
+
+.clear-filter-btn {
+  background: #ffe4e6;
+  border: 1px solid #fda4af;
+  color: #ef4444;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-filter-btn:hover {
+  background: #ef4444;
+  color: #ffffff;
+}

@@ -1,0 +1,173 @@
+/* ===================================================
+   PREMIUM LIGHT STATS SECTION
+=================================================== */
+
+.stats-section {
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.stats-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 50px;
+}
+
+.stats-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  border: 1px solid #7dd3fc;
+  color: #0284c7;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.12);
+}
+
+.stats-header h2 {
+  font-size: 40px;
+  color: #0f172a;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.stats-header p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.stat-card.clickable-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.stat-card.clickable-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.15);
+}
+
+.click-hint {
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.click-hint.hint-indigo {
+  background: #ede9fe;
+  color: #6366f1;
+  border: 1px solid #ddd6fe;
+}
+
+.stat-card.clickable-card:hover .click-hint.hint-indigo {
+  background: #6366f1;
+  color: #ffffff;
+}
+
+.click-hint.hint-orange {
+  background: #fff7ed;
+  color: #f97316;
+  border: 1px solid #ffedd5;
+}
+
+.stat-card.clickable-card:hover .click-hint.hint-orange {
+  background: #f97316;
+  color: #ffffff;
+}
+
+.click-hint.hint-emerald {
+  background: #ecfdf5;
+  color: #10b981;
+  border: 1px solid #a7f3d0;
+}
+
+.stat-card.clickable-card:hover .click-hint.hint-emerald {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.stat-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff !important;
+  font-size: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.35s ease;
+}
+
+.stat-icon svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  font-size: 30px;
+}
+
+.stat-card:hover .stat-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.stat-card h3 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.stat-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.stat-card p {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .stats-header h2 { font-size: 28px; }
+  .stats-grid { grid-template-columns: 1fr; }
+}

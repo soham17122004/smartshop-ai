@@ -1,0 +1,142 @@
+/* ===================================================
+   PREMIUM LIGHT FILTER TOOLBAR
+=================================================== */
+
+.filter-toolbar {
+  max-width: 1400px;
+  margin: 0 auto 30px;
+  padding: 22px 28px;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.toolbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 14px;
+}
+
+.toolbar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.filter-icon {
+  color: #6366f1;
+  font-size: 18px;
+}
+
+.results-count {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.reset-filter-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.reset-filter-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.toolbar-controls {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-group label {
+  font-size: 13px;
+  font-weight: 800;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.control-group select {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.control-group select:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+}
+
+.pill-group {
+  display: flex;
+  gap: 6px;
+}
+
+.filter-pill {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.filter-pill.active {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.range-group input[type="range"] {
+  accent-color: #6366f1;
+  height: 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .toolbar-controls { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .toolbar-controls { grid-template-columns: 1fr; }
+}

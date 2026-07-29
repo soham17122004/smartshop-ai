@@ -1,0 +1,232 @@
+/* ===================================================
+   PREMIUM LIGHT GLASSMORPHIC HERO
+=================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 6%;
+  background: transparent;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.1), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(217, 70, 239, 0.08), transparent 45%);
+  pointer-events: none;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1350px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-left {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #ede9fe;
+  border: 1px solid #ddd6fe;
+  color: #6366f1;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.15);
+  margin-bottom: 24px;
+}
+
+.hero-badge svg {
+  font-size: 18px;
+  color: #d946ef;
+}
+
+.hero-left h1 {
+  font-size: 58px;
+  line-height: 1.1;
+  color: #0f172a;
+  font-weight: 800;
+  margin-bottom: 22px;
+  letter-spacing: -1px;
+}
+
+.hero-left h1 span {
+  display: block;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 8px;
+}
+
+.hero-left p {
+  max-width: 600px;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 38px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 16px 32px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.primary-btn {
+  border: none;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(99, 102, 241, 0.5);
+}
+
+.secondary-btn {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+.secondary-btn:hover {
+  background: #f8fafc;
+  transform: translateY(-3px) scale(1.02);
+  border-color: #94a3b8;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+}
+
+.stat-card svg {
+  font-size: 34px;
+  color: #6366f1;
+  margin-bottom: 12px;
+}
+
+.stat-card h2 {
+  font-size: 30px;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-weight: 800;
+}
+
+.stat-card p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-card {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+.hero-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.hero-card-content {
+  padding: 24px;
+}
+
+.hero-card-content h3 {
+  color: #0f172a;
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.hero-card-content p {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1100px) {
+  .hero-container { grid-template-columns: 1fr; text-align: center; }
+  .hero-right { order: -1; }
+  .hero-buttons { justify-content: center; }
+  .hero-left p { margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 768px) {
+  .hero-left h1 { font-size: 40px; }
+  .hero-left p { font-size: 16px; }
+  .hero-stats { grid-template-columns: 1fr; }
+  .primary-btn, .secondary-btn { width: 100%; }
+}
