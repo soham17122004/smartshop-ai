@@ -87,13 +87,16 @@ def serialize_product(row, similarity=None):
 def search_products(query, limit=50):
     query = str(query).strip().lower()
     if query == "":
-        return []
+        return [serialize_product(row) for _, row in products.head(limit).iterrows()]
 
     matches = products[
         products["title"].str.lower().str.contains(query, regex=False, na=False) |
         products["brand"].str.lower().str.contains(query, regex=False, na=False) |
         products["category"].str.lower().str.contains(query, regex=False, na=False)
     ].head(limit)
+
+    if matches.empty:
+        matches = products.head(limit)
 
     return [serialize_product(row) for _, row in matches.iterrows()]
 

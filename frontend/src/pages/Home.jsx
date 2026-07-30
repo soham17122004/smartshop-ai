@@ -64,7 +64,29 @@ function Home() {
 
   useEffect(() => {
     fetchTrendingProducts();
+    fetchFullCatalogWithoutScroll();
   }, []);
+
+  const fetchFullCatalogWithoutScroll = async () => {
+    setLoading(true);
+    setSearched(true);
+    setActiveFilter({ type: "catalog", value: "Featured Product Catalog" });
+
+    try {
+      const response = await api.get("/search?query=a");
+
+      if (Array.isArray(response.data)) {
+        setProducts(response.data);
+      } else {
+        setProducts([]);
+      }
+    } catch (error) {
+      console.error("Fetch Catalog Error:", error);
+      setProducts([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const fetchTrendingProducts = async () => {
     try {
